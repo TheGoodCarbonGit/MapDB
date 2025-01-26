@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Igg5nsMfDMe9dknOamyClwrK1Sk/4Pr8sk39ajPHhmM=",
+  "Source": "MapDB.Api",
+  "BasePath": "_content/MapDB.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "UEGuKefafsc=",
+  "success": true,
+  "projectFilePath": "D:\\projects\\MapDB\\build.proj",
+  "expectedPackageFiles": [
+    "C:\\Users\\binghaskyl\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.3\\microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "C:\\Users\\binghaskyl\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net45\\1.0.3\\microsoft.netframework.referenceassemblies.net45.1.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

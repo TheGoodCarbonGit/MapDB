@@ -1,0 +1,30 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapDB.Api", "MapDB.Api\MapDB.Api.csproj", "{66293D3E-735E-CD62-91BF-82C8B03F1720}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MapDB.UnitTests", "MapDB.UnitTests\MapDB.UnitTests.csproj", "{3942C604-8B66-5449-F3E0-FB02542D4286}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66293D3E-735E-CD62-91BF-82C8B03F1720}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66293D3E-735E-CD62-91BF-82C8B03F1720}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66293D3E-735E-CD62-91BF-82C8B03F1720}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66293D3E-735E-CD62-91BF-82C8B03F1720}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3942C604-8B66-5449-F3E0-FB02542D4286}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3942C604-8B66-5449-F3E0-FB02542D4286}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3942C604-8B66-5449-F3E0-FB02542D4286}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3942C604-8B66-5449-F3E0-FB02542D4286}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC98B200-B8FA-4A5D-A129-A750D76E09D8}
+	EndGlobalSection
+EndGlobal

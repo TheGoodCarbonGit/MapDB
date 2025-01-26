@@ -1,0 +1,6 @@
+@MapDB_HostAddress = http://localhost:5270
+
+GET {{MapDB_HostAddress}}/Pins/
+Accept: application/json
+
+###
