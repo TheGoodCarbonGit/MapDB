@@ -49,7 +49,7 @@ namespace MapDB.Api.Controllers{
             Pin Pin = new(){
                 ID = Guid.NewGuid(),
                 Name = PinDTO.Name,
-                Location = PinDTO.Location,
+                Coordinates = PinDTO.Coordinates,
                 Category = PinDTO.Category,
                 Description = PinDTO.Description,
                 CreationDate = DateTimeOffset.UtcNow
@@ -69,7 +69,7 @@ namespace MapDB.Api.Controllers{
             }
 
             existingPin.Name = PinDTO.Name;
-            existingPin.Location = PinDTO.Location;
+            existingPin.Coordinates = PinDTO.Coordinates;
             existingPin.Category = PinDTO.Category;
             existingPin.Description = PinDTO.Description;
 

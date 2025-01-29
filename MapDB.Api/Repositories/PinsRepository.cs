@@ -6,9 +6,9 @@ namespace MapDB.Api.Repositories{
     public class PinsRepository : IPinsRepository{
 
         private readonly List<Pin> Pins = new(){
-            new Pin { ID = Guid.NewGuid(), Name = "Victoria University", Location = "Wellington", Category = "School", Description = "", CreationDate = DateTimeOffset.UtcNow },
-            new Pin { ID = Guid.NewGuid(), Name = "Massey University", Location = "Palmerston North", Category = "School", Description = "", CreationDate = DateTimeOffset.UtcNow },
-            new Pin { ID = Guid.NewGuid(), Name = "Whitireia", Location = "Porirua", Category = "School", Description = "", CreationDate = DateTimeOffset.UtcNow },
+            new Pin { ID = Guid.NewGuid(), Name = "Soilpro NZ", Coordinates = [175.0183659089638, -37.20317658868487], Category = "Good Friend", Description = "", CreationDate = DateTimeOffset.UtcNow },
+            new Pin { ID = Guid.NewGuid(), Name = "Birchville Community Garden", Coordinates = [175.0991339, -41.09363516], Category = "Project", Description = "", CreationDate = DateTimeOffset.UtcNow },
+            new Pin { ID = Guid.NewGuid(), Name = "Tolaga Bay Inn Charitable Trust", Coordinates = [178.2971262, -38.37198794], Category = "Carbon Farmer", Description = "", CreationDate = DateTimeOffset.UtcNow },
         };
 
         public async Task<IEnumerable<Pin>> GetPinsAsync(){
