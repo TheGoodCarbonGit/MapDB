@@ -7,7 +7,7 @@ namespace MapDB.Api.Entities{
         [BsonId]
         public Guid ID { get; set; } // guid: unique ID
         public string Name { get; set; }
-        public string Location { get; set; }
+        public double[] Coordinates { get; set; }
         public string Category { get; set; }
         public string Description { get; set; }
         public DateTimeOffset CreationDate { get; set; }
