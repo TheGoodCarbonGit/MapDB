@@ -2,6 +2,7 @@ using System.ComponentModel;
 using MapDB.Api.DTOs;
 using MapDB.Api.Entities;
 using MapDB.Api.Repositories;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MapDB.Api.Controllers{
@@ -17,7 +18,8 @@ namespace MapDB.Api.Controllers{
             this.repository = repository;
         }
 
-        // GET /Pins
+        // GET /
+        [EnableCors("MyAllowSpecificOrigins")]
         [HttpGet]
 
         public async Task<IEnumerable<PinDTO>> GetPinsAsync(string name = null){
@@ -32,6 +34,7 @@ namespace MapDB.Api.Controllers{
         }
         
         // GET /Pins/{ID}
+        [EnableCors("MyAllowSpecificOrigins")]
         [HttpGet("{ID}")]
         public async Task<ActionResult<PinDTO>> GetPinAsync(Guid ID){ // allows the return of NotFound and Pin
             var Pin = await repository.GetPinAsync(ID);
@@ -44,6 +47,7 @@ namespace MapDB.Api.Controllers{
         }
 
         // POST /Pins
+        [EnableCors("MyAllowSpecificOrigins")]
         [HttpPost]
         public async Task<ActionResult<PinDTO>> CreatePinAsync(CreatePinDTO PinDTO){
             Pin Pin = new(){
@@ -60,6 +64,7 @@ namespace MapDB.Api.Controllers{
         }
 
         // PUT /Pins/{ID}
+        [EnableCors("MyAllowSpecificOrigins")]
         [HttpPut("{ID}")]
         public async Task<ActionResult> UpdatePinAsync(Guid ID, UpdatePinDTO PinDTO){ 
             var existingPin = await repository.GetPinAsync(ID);
@@ -79,6 +84,7 @@ namespace MapDB.Api.Controllers{
         } 
 
         // DELETE /Pins/{ID}
+        [EnableCors("MyAllowSpecificOrigins")]
         [HttpDelete("{ID}")]
         public async Task<ActionResult> DeletePinAsync(Guid ID){
             var existingPin = await repository.GetPinAsync(ID);

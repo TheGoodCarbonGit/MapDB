@@ -7,8 +7,21 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
+
+// add CORS policies
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy =>
+        {
+            policy.WithOrigins("https://squarespace.com", "https://www.thegoodcarbonfarm.com").AllowAnyMethod()
+                .AllowAnyHeader();
+        });
+});
+
 
 // serialiser allows the string to be human-friendly
 BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
@@ -57,6 +70,7 @@ if (app.Environment.IsDevelopment()){
 }
 
 app.UseRouting();
+app.UseCors(MyAllowSpecificOrigins);
 app.UseAuthorization();
 
 // checks if server is healthy
