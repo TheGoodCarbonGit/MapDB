@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v9.0": {
-      "MapDB.api/1.0.0": {
+      "MapDB.Api/1.0.0": {
         "dependencies": {
           "AspNetCore.HealthChecks.MongoDb": "8.1.0",
           "Microsoft.AspNetCore.OpenApi": "9.0.0",
@@ -14,7 +14,7 @@
           "Swashbuckle.AspNetCore": "7.2.0"
         },
         "runtime": {
-          "MapDB.api.dll": {}
+          "MapDB.Api.dll": {}
         }
       },
       "AspNetCore.HealthChecks.MongoDb/8.1.0": {
@@ -280,7 +280,7 @@
     }
   },
   "libraries": {
-    "MapDB.api/1.0.0": {
+    "MapDB.Api/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

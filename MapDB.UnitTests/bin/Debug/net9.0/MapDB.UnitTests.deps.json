@@ -740,9 +740,9 @@
           "Swashbuckle.AspNetCore": "7.2.0"
         },
         "runtime": {
-          "MapDB.api.dll": {
+          "MapDB.Api.dll": {
             "assemblyVersion": "1.0.0",
-            "fileVersion": ""
+            "fileVersion": "1.0.0.0"
           }
         }
       }

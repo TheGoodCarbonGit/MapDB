@@ -48,3 +48,4 @@ d:\projects\MapDB\MapDB.api\obj\Debug\net9.0\refint\MapDB.api.dll
 d:\projects\MapDB\MapDB.api\obj\Debug\net9.0\MapDB.api.pdb
 d:\projects\MapDB\MapDB.api\obj\Debug\net9.0\MapDB.api.genruntimeconfig.cache
 d:\projects\MapDB\MapDB.api\obj\Debug\net9.0\ref\MapDB.api.dll
+d:\projects\MapDB\MapDB.api\obj\Debug\net9.0\MapDB.api.sourcelink.json

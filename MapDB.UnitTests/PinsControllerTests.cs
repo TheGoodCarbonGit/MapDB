@@ -99,7 +99,7 @@ public class PinsControllerTests
     {
         // Arrange
         var PinToCreate = new CreatePinDTO(Guid.NewGuid().ToString(), // name
-            Guid.NewGuid().ToString(), // location
+            [1.9,1.9], // coordinates
             Guid.NewGuid().ToString(), // category
             Guid.NewGuid().ToString()); // description
 
@@ -128,7 +128,7 @@ public class PinsControllerTests
 
         var PinID = existingPin.ID;
         var PinToUpdate = new UpdatePinDTO(Guid.NewGuid().ToString(), // name
-            Guid.NewGuid().ToString(), // location
+            [1.9,1.9], // coordinates
             Guid.NewGuid().ToString(), // category
             Guid.NewGuid().ToString() // description
             );
@@ -164,8 +164,9 @@ public class PinsControllerTests
         return new(){
             ID = Guid.NewGuid(),
             Name = Guid.NewGuid().ToString(),
+            Coordinates = [1.0,1.0],
             Category = Guid.NewGuid().ToString(),
-            Location = Guid.NewGuid().ToString(),
+            Description = Guid.NewGuid().ToString(),
             CreationDate = DateTimeOffset.UtcNow
         };
     }

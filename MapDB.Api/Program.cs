@@ -11,6 +11,8 @@ var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+
 // add CORS policies
 builder.Services.AddCors(options =>
 {
@@ -100,5 +102,20 @@ app.MapHealthChecks("/health/ready", new HealthCheckOptions{
 app.MapHealthChecks("/health/live", new HealthCheckOptions{
     Predicate = (_) => false // excludes every health checking, including MongoDB
 });
+
+
+/* origin: specifies which domains can access the domain
+headers: which headers can be used in requests
+methods: methods that can be used when accessing the database */
+app.Use(async (context, next) =>
+{
+    context.Response.Headers.Add("Access-Control-Allow-Origin", "https://squarespace.com, https://www.thegoodcarbonfarm.com");
+    context.Response.Headers.Add("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    context.Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    
+    await next();
+});
+
+
 
 app.Run();

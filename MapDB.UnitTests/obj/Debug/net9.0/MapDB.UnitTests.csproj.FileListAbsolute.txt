@@ -137,3 +137,4 @@ d:\projects\MapDB\MapDB.UnitTests\obj\Debug\net9.0\refint\MapDB.UnitTests.dll
 d:\projects\MapDB\MapDB.UnitTests\obj\Debug\net9.0\MapDB.UnitTests.pdb
 d:\projects\MapDB\MapDB.UnitTests\obj\Debug\net9.0\MapDB.UnitTests.genruntimeconfig.cache
 d:\projects\MapDB\MapDB.UnitTests\obj\Debug\net9.0\ref\MapDB.UnitTests.dll
+d:\projects\MapDB\MapDB.UnitTests\obj\Debug\net9.0\MapDB.UnitTests.sourcelink.json
