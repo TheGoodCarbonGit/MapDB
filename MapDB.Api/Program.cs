@@ -8,25 +8,10 @@ using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 using Microsoft.AspNetCore.Mvc;
-
-
-var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+using Microsoft.AspNetCore.Http.HttpResults;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// add CORS policies
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-        policy =>
-        {
-            policy.WithOrigins("https://squarespace.com", "https://www.thegoodcarbonfarm.com")
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .WithExposedHeaders("Access-Control-Allow-Origin");
-        });
-});
-
 
 // serialiser allows the string to be human-friendly
 BsonSerializer.RegisterSerializer(new GuidSerializer(BsonType.String));
@@ -79,7 +64,6 @@ if (app.Environment.IsDevelopment()){
 }
 
 app.UseRouting();
-app.UseCors(MyAllowSpecificOrigins);
 app.UseAuthorization();
 
 // checks if server is healthy
@@ -111,18 +95,19 @@ app.MapHealthChecks("/health/live", new HealthCheckOptions{
 });
 
 
-/* origin: specifies which domains can access the domain
-headers: which headers can be used in requests
-methods: methods that can be used when accessing the database */
-app.Use(async (context, next) =>
+app.Use(async (context, next) => // context = any http request
 {
-    context.Response.Headers.Add("Access-Control-Allow-Origin", "https://www.thegoodcarbonfarm.com");
-    context.Response.Headers.Add("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    context.Response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    context.Response.Headers["Access-Control-Allow-Origin"] = "https://www.thegoodcarbonfarm.com";
+    context.Response.Headers["Access-Control-Allow-Headers"] = "Origin, X-Requested-With, Content-Type, Accept";
     
-    await next();
+    if (context.Request.Method == HttpMethods.Options){
+        context.Response.Headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS";
+        context.Response.StatusCode = (int)HttpStatusCode.OK;
+        return;
+    }
+    
+    await next(); // moves on to the next task
 });
 
-
-
 app.Run();
+
