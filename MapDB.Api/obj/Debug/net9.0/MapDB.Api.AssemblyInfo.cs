@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MapDB.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f50afa1837206967dfe2db66b8c46c33a6a7aaf9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c1a4b401f30775fdad18979c4f4e3b9675f8814")]
 [assembly: System.Reflection.AssemblyProductAttribute("MapDB.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MapDB.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
