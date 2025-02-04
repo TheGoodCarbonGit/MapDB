@@ -78,10 +78,10 @@ if (app.Environment.IsDevelopment()){
     app.UseHttpsRedirection();
 }
 
-app.UseCors(MyAllowSpecificOrigins);
-
 app.UseRouting();
+app.UseCors(MyAllowSpecificOrigins);
 app.UseAuthorization();
+
 // checks if server is healthy
 app.MapControllers();
 app.MapHealthChecks("/health/ready", new HealthCheckOptions{
@@ -122,5 +122,7 @@ app.Use(async (context, next) =>
     
     await next();
 });
+
+
 
 app.Run();
