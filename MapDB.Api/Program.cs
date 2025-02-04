@@ -7,11 +7,12 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
+using Microsoft.AspNetCore.Mvc;
+
+
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
-
-
 
 // add CORS policies
 builder.Services.AddCors(options =>
@@ -48,10 +49,14 @@ builder.Services.AddSingleton<IMongoClient>(serviceProvider =>
 builder.Services.AddSingleton<IPinsRepository, MongoDBRepository>();
 
 // Register services
-builder.Services.AddControllers(options =>
+builder.Services.AddControllers().AddMvcOptions(options =>
 {
     options.SuppressAsyncSuffixInActionNames = false; // allows async suffix in method calls
-});
+})
+.AddJsonOptions(options =>{
+    options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+}
+);
 
 // REST API health checks
 builder.Services.AddHealthChecks()
