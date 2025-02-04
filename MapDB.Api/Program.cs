@@ -19,8 +19,10 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
         policy =>
         {
-            policy.WithOrigins("https://squarespace.com", "https://www.thegoodcarbonfarm.com").AllowAnyMethod()
-                .AllowAnyHeader();
+            policy.WithOrigins("https://squarespace.com", "https://www.thegoodcarbonfarm.com")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .WithExposedHeaders("Access-Control-Allow-Origin");
         });
 });
 
