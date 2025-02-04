@@ -18,6 +18,13 @@ namespace MapDB.Api.Controllers{
             this.repository = repository;
         }
 
+        // OPTIONS
+        [EnableCors("MyAllowSpecificOrigins")]
+        [HttpOptions]
+        public IActionResult Options(){
+            return Ok();
+        }
+
         // GET /
         [EnableCors("MyAllowSpecificOrigins")]
         [HttpGet]
