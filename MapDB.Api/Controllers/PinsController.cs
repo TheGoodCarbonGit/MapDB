@@ -45,6 +45,12 @@ namespace MapDB.Api.Controllers{
         // POST /Pins
         [HttpPost]
         public async Task<ActionResult<PinDTO>> CreatePinAsync(CreatePinDTO PinDTO){
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState); // Returns validation errors
+            }
+
             Pin Pin = new(){
                 ID = Guid.NewGuid(),
                 Name = PinDTO.Name,
@@ -65,6 +71,11 @@ namespace MapDB.Api.Controllers{
 
             if(existingPin is null){
                 return NotFound();
+            }
+            
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState); // Returns validation errors
             }
 
             existingPin.Name = PinDTO.Name;
@@ -92,5 +103,6 @@ namespace MapDB.Api.Controllers{
 
             return NoContent();
         }
+        
     }
 }
