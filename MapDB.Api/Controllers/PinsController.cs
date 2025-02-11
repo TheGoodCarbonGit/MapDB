@@ -85,8 +85,8 @@ namespace MapDB.Api.Controllers{
 
             await repository.UpdatePinAsync(existingPin);
 
-            //return CreatedAtAction(nameof(GetPinAsync), new { id = existingPin.ID}, existingPin.AsDTO()); //return value so that it can be updated in front end
-            return NoContent(); // conventions of put methods do not require a return
+            return CreatedAtAction(nameof(GetPinAsync), new { id = existingPin.ID}, existingPin.AsDTO()); //return value so that it can be updated in front end
+            //return NoContent(); // conventions of put methods do not require a return
             
         } 
 
