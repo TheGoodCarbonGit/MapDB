@@ -1,7 +1,9 @@
 using System.ComponentModel;
+using FluentValidation;
 using MapDB.Api.DTOs;
 using MapDB.Api.Entities;
 using MapDB.Api.Repositories;
+using MapDB.Api.Validator;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
@@ -45,7 +47,17 @@ namespace MapDB.Api.Controllers{
         // POST /Pins
         [HttpPost]
         public async Task<ActionResult<PinDTO>> CreatePinAsync(CreatePinDTO PinDTO){
-            Pin Pin = new(){
+
+            var validator = new postPinValidator();
+            var result = await validator.ValidateAsync(PinDTO);
+
+            if (!result.IsValid)
+            {
+                return BadRequest(result);
+            }
+
+            Pin Pin = new()
+            {
                 ID = Guid.NewGuid(),
                 Name = PinDTO.Name,
                 Coordinates = PinDTO.Coordinates,
@@ -65,6 +77,14 @@ namespace MapDB.Api.Controllers{
 
             if(existingPin is null){
                 return NotFound();
+            }
+
+            var validator = new putPinValidator();
+            var result = await validator.ValidateAsync(PinDTO);
+
+            if (!result.IsValid)
+            {
+                return BadRequest(result);
             }
 
             existingPin.Name = PinDTO.Name;
