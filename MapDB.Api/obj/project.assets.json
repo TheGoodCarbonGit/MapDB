@@ -1827,11 +1827,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\MapDB\\MapDB.Api\\MapDB.Api.csproj",
-      "projectName": "MapDB.Api",
-      "projectPath": "D:\\projects\\MapDB\\MapDB.Api\\MapDB.Api.csproj",
+      "projectUniqueName": "d:\\projects\\MapDB\\MapDB.api\\MapDB.api.csproj",
+      "projectName": "MapDB.api",
+      "projectPath": "d:\\projects\\MapDB\\MapDB.api\\MapDB.api.csproj",
       "packagesPath": "C:\\Users\\binghaskyl\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\MapDB\\MapDB.Api\\obj\\",
+      "outputPath": "d:\\projects\\MapDB\\MapDB.api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1907,7 +1907,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.103/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
